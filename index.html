@@ -1,53 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assistente</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RunIA</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <!-- Cabeçalho da página-->
-        <img src="./assets/logo.png" alt="Logo"> <!-- ./  Significa que estou na pasta do projeto -->
+      <!-- Cabeçalho da página-->
+      <img src="./assets/logo.png" alt="Logo" />
+      <!-- ./  Significa que estou na pasta do projeto -->
     </header>
     <main>
-        <!--Conteudo principal da página-->
-        <section>
-            <div>
-                <h2>Assistente de Meta</h2>
-                <p>Pergunte sobre estratégias, builds e dicas para seus jogos!</p>
+      <!--Conteudo principal da página-->
+      <button onclick="mostrar()" id="profile-editor">Editar perfil</button>
+      <section>
+        <div id="perfil-container">
+          <div id="cabecalho">
+            <h2>Runia, sua assistente para corridas</h2>
+            <p>Melhore seu desempenho e alcance seus objetivos!</p>
+          </div>
+          <div class="hidden" id="saudacao">
+            <h2>Olá,</h2>
+            <p>Melhore seu desempenho e alcance seus objetivos!</p>
+          </div>
+          <form id="perfil">
+            <div id="infos">
+              <div id="perfil-infos">
+                <label for="nome">Nome</label>
+                <input
+                  type="text"
+                  id="nome"
+                  name="nome"
+                  required
+                  minlength="2"
+                  placeholder="Digite seu nome"
+                />
+              </div>
 
-                <form id="form">
-                    <input id="apiKey"type="password" placeholder="TESTE" required>
-                    <select id="gameSelect">
-                        <option value="">Selecione um jogo</option>
-                        <option value="lol">League of Legends</option>
-                    </select>
-                    <input id="questionInput" type="text" placeholder="TESTE">
-                    <button id="askButton">Perguntar</button>
-                    </form>
-                    <div id="iaResponse"class="hidden">
-                        <div class="responseContent">
+              <div id="perfil-infos">
+                <label for="peso">Peso (kg)</label>
+                <input
+                  type="number"
+                  id="peso"
+                  name="peso"
+                  required
+                  min="30"
+                  max="200"
+                />
+              </div>
 
-                        </div>
-                    </div>
+              <div id="perfil-infos">
+                <label for="altura">Altura (cm)</label>
+                <input
+                  type="number"
+                  id="altura"
+                  name="altura"
+                  required
+                  min="100"
+                  max="250"
+                  placeholder="Ex: 178"
+                />
+              </div>
 
+              <fieldset>
+                <p id="titulo-dores">Sente dores em alguma região?</p>
+
+                <label>
+                  <input type="checkbox" name="dores" value="joelho" />
+                  Joelho
+                </label>
+
+                <label>
+                  <input type="checkbox" name="dores" value="tornozelo" />
+                  Tornozelo
+                </label>
+
+                <label>
+                  <input type="checkbox" name="dores" value="quadril" />
+                  Quadril
+                </label>
+
+                <label>
+                  <input type="checkbox" name="dores" value="coluna" />
+                  Coluna
+                </label>
+              </fieldset>
             </div>
-
-        </section>
+            <button type="submit">Salvar Perfil</button>
+          </form>
+          <form class="hidden" id="form">
+            <input id="apiKey" type="password" placeholder="TESTE" required />
+            <select id="gameSelect">
+              <option value="">Selecione um assunto</option>
+              <option value="tenis">Escolher tênis</option>
+              <option value="treinos">Guia de treinos</option>
+              <option value="dieta">Dieta para corredor</option>
+              <option value="tecnica">Melhorar técnica</option>
+            </select>
+            <textarea
+              id="questionInput"
+              rows="4"
+              placeholder="Digite sua pergunta..."
+            ></textarea>
+            <button id="askButton">Perguntar</button>
+          </form>
+          <div id="iaResponse" class="hidden">
+            <div class="responseContent"></div>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="  https://unpkg.com/showdown/dist/showdown.min.js"></script>
-<script src="./script.js"></script>
-</body>
-
+    <script src="./script.js"></script>
+  </body>
+  <footer>RunIA Versão 1.0</footer>
 </html>

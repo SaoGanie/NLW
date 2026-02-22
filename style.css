@@ -5,16 +5,14 @@
 }
 
 body {
-  background-image: url("./assets/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: top center;
+  background-image: url('./assets/bg.png');
+  background-size: 150%;
   background-color: #121214;
   color: white;
 }
 
 body * {
-  font-family: "Inter";
+  font-family: 'Inter';
   line-height: 160%;
 }
 
@@ -32,20 +30,17 @@ main {
   max-width: 36rem;
   width: 90%;
   margin: 3rem auto;
-  
-  
 }
 
 section {
   background-image: linear-gradient(
     90deg,
-    #9572fc 0%,
-    #43e7ad 50%,
-    #e2d45c 100%
+    #e75c0c 0%,
+    #995b49 50%,
+    #2b2726 100%
   );
   border-radius: 0.625rem;
   padding-top: 4px;
-  
 }
 
 section > div {
@@ -53,8 +48,6 @@ section > div {
   padding-top: 1.5rem;
   border-radius: 0.5rem;
   background-color: #2a2634;
-   
-  
 }
 section h2 {
   letter-spacing: -0.42px;
@@ -86,10 +79,12 @@ form {
   margin: 1.25rem 0;
 }
 
-input,
-select {
+input[type='text'],
+input[type='number'],
+select,
+fieldset {
   all: unset;
-  border: 2px solid #9147ff;
+  border: 2px solid #f04511;
   border-radius: 0.5rem;
   padding: 0.675rem;
   font-size: 0.875rem;
@@ -105,29 +100,29 @@ button {
   border: 0;
   background-image: linear-gradient(
     90deg,
-    #9572fc 0%,
-    #43e7ad 50%,
-    #e2d45c 100%
+    #e75c0c 0%,
+    #995b49 50%,
+    #2b2726 100%
   );
   padding: 0.675rem;
   border-radius: 0.5rem;
   font-weight: bold;
   transition: all 0.3s;
+  margin: 1rem 0 1rem 0;
 }
 
 button:hover {
   cursor: pointer;
   transform: translateY(-2px);
-  box-shadow: 0 5px 1rem rgba(255, 248, 107, 0.2);
+  box-shadow: 0 5px 1rem rgb(255, 81, 0);
 }
 
 button:disabled {
   transition: initial;
   transform: initial;
   box-shadow: initial;
-  
+
   cursor: not-allowed;
-  
 }
 
 .loading {
@@ -140,10 +135,10 @@ button:disabled {
 }
 
 #iaResponse {
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 0.5rem;
   padding: 1.25rem;
-  border-left: 4px solid #43e7ad;
+  border-left: 4px solid #fa3512;
 }
 
 #iaResponse ul {
@@ -151,5 +146,41 @@ button:disabled {
 }
 
 .hidden {
-  display:none;
+  display: none;
+}
+
+fieldset {
+  margin: 1rem;
+}
+label {
+  margin: 1rem;
+}
+
+#perfil-infos {
+  margin: 1rem;
+}
+
+#saudacao {
+  text-align: center;
+}
+#questionInput {
+  width: 100%;
+  max-width: 500px;
+  min-height: 120px;
+  padding: 12px;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  border-left: 4px solid #fa3512;
+  color: white;
+}
+#questionInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ff5e00;
+}
+textarea {
+  resize: none;
 }
