@@ -6,7 +6,7 @@
 
 body {
   background-image: url('./assets/bg.png');
-  background-size: 150%;
+  background-size: cover;
   background-color: #121214;
   color: white;
 }
@@ -156,7 +156,7 @@ label {
   margin: 1rem;
 }
 
-#perfil-infos {
+.perfil-infos {
   margin: 1rem;
 }
 
@@ -183,4 +183,9 @@ label {
 }
 textarea {
   resize: none;
+}
+
+p,
+footer {
+  text-align: center;
 }

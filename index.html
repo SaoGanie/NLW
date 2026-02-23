@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,7 +10,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RunIA</title>
+    <title>RunIA - Seu treinador de corridas</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
 
@@ -33,9 +33,10 @@
             <h2>Olá,</h2>
             <p>Melhore seu desempenho e alcance seus objetivos!</p>
           </div>
+          <!-- Formulário as informções do perfil serão adicionadas -->
           <form id="perfil">
             <div id="infos">
-              <div id="perfil-infos">
+              <div class="perfil-infos">
                 <label for="nome">Nome</label>
                 <input
                   type="text"
@@ -47,7 +48,7 @@
                 />
               </div>
 
-              <div id="perfil-infos">
+              <div class="perfil-infos">
                 <label for="peso">Peso (kg)</label>
                 <input
                   type="number"
@@ -59,7 +60,7 @@
                 />
               </div>
 
-              <div id="perfil-infos">
+              <div class="perfil-infos">
                 <label for="altura">Altura (cm)</label>
                 <input
                   type="number"
@@ -98,7 +99,9 @@
             </div>
             <button type="submit">Salvar Perfil</button>
           </form>
+          <!-- Formulário onde o usuário irá escolher o assunto e fazer a pergunta -->
           <form class="hidden" id="form">
+            <!-- O imput "apiKey" será removido, ele está sendo usado provisoriamente para testes -->
             <input id="apiKey" type="password" placeholder="TESTE" required />
             <select id="gameSelect">
               <option value="">Selecione um assunto</option>
@@ -112,16 +115,19 @@
               rows="4"
               placeholder="Digite sua pergunta..."
             ></textarea>
-            <button id="askButton">Perguntar</button>
+            <button type="submit" id="askButton">Perguntar</button>
           </form>
           <div id="iaResponse" class="hidden">
+            <!-- Área onde será exibida a resposta -->
             <div class="responseContent"></div>
           </div>
         </div>
       </section>
     </main>
-    <script src="  https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <footer>
+      <p>RunIA Versão 1.0</p>
+    </footer>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script src="./script.js"></script>
   </body>
-  <footer>RunIA Versão 1.0</footer>
 </html>
